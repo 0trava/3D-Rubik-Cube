@@ -48,6 +48,20 @@ body {
     transition     : all 1s ease-out;
 }
 
+.container::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 60px;
+    background: rgb(32, 32, 32);
+    top: 650px;
+    z-index: 1;
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: .2;
+    
+}
+
 .box div {
     width                : 350px;
     height               : 350px;
