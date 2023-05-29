@@ -4,9 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
     <title>CSS 3D Rubik's Cube</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="box"></div>
+
+    </div>
+
+
+
+
+    <script>
+        let box = document.querySelector('.box')
+        const directions = ['front', 'back', 'left', 'right', 'top', 'bottom']
+        const color = ['#2bd911', '#df980b', '#0096F3', '#01D8A8', '#1538F8', '#CD1648']
+
+        for(var i of directions){
+            let directin = document.createElement
+            ('div')
+            box.appendChild(directin)
+            directin.classList.add(i)
+            directin.setAttribute('style', `--clr:${color[directions.indexOf(i)]}`)
+
+            for(let j=0; j<9; j++) {
+                let span = document.createElement('span')
+
+                directin.appendChild(span)
+            }
+
+            directin.querySelector('span').setAttribute('style', `--clr:${color[directions.indexOf(i)]}`)
+        }
+    </script>
 </body>
 </html>
