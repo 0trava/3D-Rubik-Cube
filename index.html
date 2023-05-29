@@ -9,7 +9,9 @@
     <title>CSS 3D Rubik's Cube</title>
 </head>
 <body>
+    <h1 class="title">CSS 3D Rubik's Cube</h1>
     <div class="container">
+        
         <div class="box"></div>
 
     </div>
@@ -39,11 +41,41 @@
                 if(i === 'bottom') {
                     let nameCharacters = name.split('')
                     span.innerHTML = nameCharacters[j]
-
+                    span.classList.add ("nameLetters")
                 }
             }
 
             directin.querySelector('span').setAttribute('style', `--clr:${color[directions.indexOf(i)]}`)
+        }
+
+
+
+        var isKeyDown = false;
+
+        document.documentElement.addEventListener('mousedown', function(e) {
+            isKeyDown = true;
+            console.log(e.clientX, e.clientY)
+            rotateCube(e.clientX, e.clientY)
+
+        })
+
+        document.documentElement.addEventListener('mouseup', function(e) {
+            isKeyDown = false;
+            rotateCube(e.clientX, e.clientY)
+        })
+        
+
+        document.documentElement.addEventListener('mousemove', function(e) {
+            isKeyDown && rotateCube(e.clientX, e.clientY)
+        })
+
+        function rotateCube(x, y) {
+            console.log(x, y)
+
+            let Xvalue = Math.floor((x / 2) + 100)
+            let Yvalue = Math.floor((y / 2) + 100)
+            box.style.transform = `rotateX(${Yvalue}deg) rotateY(${Xvalue}deg)`
+
         }
     </script>
 </body>

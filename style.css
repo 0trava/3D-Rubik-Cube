@@ -8,128 +8,137 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    background-image: linear-gradient(62deg, #032e59 0%, #E0C3FC 100%);
     overflow: hidden;
+    overflow  : hidden;
+    cursor    : move;
     
 }
 
-.container{
-    width: 600px;
-    height: 600px;
+.title{
+    color: #fff;
+    z-index: 100;
+    padding-top: 20px;
+    font-size: 5vw;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    perspective: 1000;
+    transform: translateX(-50%);
+
 
 }
 
-.box{
- position: absolute;
- width: 350px;
- height: 350px;
- transform-style: preserve-3d;
+.container {
+    width          : 600px;
+    height         : 600px;
+    position       : absolute;
+    top            : 50%;
+    left           : 50%;
+    transform      : translate(-50%, -50%);
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    perspective    : 2000px;
+}
 
- /* Transform */
- transform: rotateY(130deg) rotateX(-130deg);
-
+.box {
+    position       : absolute;
+    width          : 350px;
+    height         : 350px;
+    transform-style: preserve-3d;
+    transition     : all 1s ease-out;
 }
 
 .box div {
-
-    width: 350px;
-    height: 350px;
-    position: absolute;
-    background: white;
-    /* display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    color: white; */
-
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(calc(350px / 4), 1fr));
-    gap: 4px;
-    padding: 4px;
+    width                : 350px;
+    height               : 350px;
+    position             : absolute;
+    background           : #fff;
+    display              : grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(350px /4), 1fr));
+    gap                  : 4px;
+    padding              : 4px;
 
 }
 
 .top {
-    bottom:175px;
-    transform:rotateX(90deg);
+    bottom   : 175px;
+    transform: rotateX(90deg);
 }
 
 .bottom {
-    top:175px;
-    transform:rotateX(-90deg);
+    top      : 175px;
+    transform: rotateX(-90deg);
 }
 
 .left {
-    right:175px;
-    transform:rotateY(-90deg);
+    right    : 175px;
+    transform: rotateY(-90deg)
 }
 
 .right {
-    left:175px;
-    transform:rotateY(90deg);
+    left     : 175px;
+    transform: rotateY(90deg)
 }
 
-.front{
-    transform:translateZ(175px);
+.front {
+    transform: translateZ(175px)
 }
 
-.back{
-    transform:translateZ(-175px);
+.back {
+    transform: translateZ(-175px)
 }
+
 
 .box div span {
-    height: calc(350px / 3 - 6px);
-    background: var(--clr);
-    border-radius: 10px;
-    position: relative;
-    z-index: -1;
-    overflow: hidden;
-    text-align: center;
-    overflow: hidden;
-
-    display: flex;
+    height         : calc(350px / 3 -6px);
+    background     : var(--clr);
+    border-radius  : 10px;
+    position       : relative;
+    z-index        : -1;
+    overflow       : hidden;
+    text-align     : center;
+    overflow       : hidden;
+    display        : flex;
     justify-content: center;
-    align-content: center;
-    align-items: center;
-    color: white; 
-    font-size: 2rem;
+    align-items    : center;
+    color          : #fff;
+    font-size      : 2rem;
     background-size: 100%;
-
 }
 
-.box div > span::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.box div>span::before {
+    content        : "";
+    position       : absolute;
+    top            : 50%;
+    left           : 50%;
+    transform      : translate(-50%, -50%);
+    width          : 60px;
+    height         : 60px;
+    border-radius  : 50%;
     backdrop-filter: blur(5px);
-    background: linear-gradient(to bottom right, var(--clr) 60%, #bfbfbf);
-    box-shadow: -10px -20px 30px rgba(0, 0, 0, .2);
-    z-index: -1;
+    background     : linear-gradient(to bottom right, var(--clr) 60%, #bfbfbf);
+    box-shadow     : -10px -20px 30px rgba(0, 0, 0, 0.2);
+    z-index        : -1;
 }
 
-.box div > span::after {
-    content: '';
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    top: 0;
-    left: 0;
-    background: linear-gradient(#ffffff44 50%, transparent 50%);
-    z-index: -1;
+.box div>span::after {
+    content        : "";
+    position       : absolute;
+    width          : 350px;
+    height         : 350px;
+    top            : 0;
+    left           : 0;
+    background     : linear-gradient(#ffffff44 50%, transparent 50%);
+    z-index        : -1;
     backdrop-filter: blur(2px);
-    transform: rotate(-40deg);
+    transform      : rotate(-40deg);
 }
 
+.nameLetters {
+    font-size     : 3.5rem !important;
+    font-weight   : 700;
+    z-index       : 10000 !important;
+    font-family   : sans-serif;
+    user-select   : none;
+    pointer-events: none;
+}
