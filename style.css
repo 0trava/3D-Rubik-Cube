@@ -34,20 +34,23 @@ body {
  transform-style: preserve-3d;
 
  /* Transform */
- transform: rotateY(130deg) rotateX(130deg);
+ transform: rotateY(130deg) rotateX(-130deg);
 
 }
 
 .box div {
-    position: absolute;
+
     width: 350px;
     height: 350px;
-    background-color: white;
-    display: flex;
+    position: absolute;
+    background: white;
+    /* display: flex;
     justify-content: center;
+    align-content: center;
     align-items: center;
+    color: white; */
 
-    display: grid;
+    display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(calc(350px / 4), 1fr));
     gap: 4px;
     padding: 4px;
@@ -91,6 +94,14 @@ body {
     overflow: hidden;
     text-align: center;
     overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: white; 
+    font-size: 2rem;
+    background-size: 100%;
 
 }
 

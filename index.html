@@ -33,6 +33,14 @@
                 let span = document.createElement('span')
 
                 directin.appendChild(span)
+
+                let name = "TECHUSTAAD"
+
+                if(i === 'bottom') {
+                    let nameCharacters = name.split('')
+                    span.innerHTML = nameCharacters[j]
+
+                }
             }
 
             directin.querySelector('span').setAttribute('style', `--clr:${color[directions.indexOf(i)]}`)
